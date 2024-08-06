@@ -1,6 +1,6 @@
 import allure
 
-from ivi_tests_API_and_Ui_framework.utils.pages_ui.ivi_main_page import (
+from Diploma_tests_IVI_with_UI_and_API_tests.models.pages.ivi_main_page import (
     open_main_page, search_muvie, click_on_search, results_message,
     no_results_message
 )

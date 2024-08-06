@@ -1,6 +1,6 @@
 import allure
 
-from ivi_tests_API_and_Ui_framework.utils.pages_ui.ivi_main_page import open_main_page, click_on_notifications_button, \
+from Diploma_tests_IVI_with_UI_and_API_tests.models.pages.ivi_main_page import open_main_page, click_on_notifications_button, \
     verify_notifications_page, verify_start_page, click_ivi_logo, click_movies_button, verify_movies_page_title, \
     verify_serials_page_title, click_serials_button, click_cartoons_button, verify_cartoons_page_title
 
