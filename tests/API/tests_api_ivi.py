@@ -2,7 +2,7 @@ import allure
 import requests
 from jsonschema import validate
 
-from tests.API_tests.schemas.ivi_api_schemas import age_categories_schema, all_age_categories_schema, \
+from tests.API.schemas.ivi_api_schemas import age_categories_schema, all_age_categories_schema, \
     meta_genres_schema, meta_genres_schema_v5_all_params, \
     catalogue_schema_catalogue_genre_and_rating, catalogue_schema_format_and_3d
 
