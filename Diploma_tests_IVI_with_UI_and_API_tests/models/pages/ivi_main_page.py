@@ -64,7 +64,7 @@ def click_serials_button():
         browser.element("//div[contains(@class, 'nbl-button__primaryText') and text()='Сериалы']").should(
             be.visible).click()
 
-
+#
 def verify_serials_page_title():
     with step("Проверить заголовок на странице 'Сериалы'"):
         browser.element("h1.headerBar__title").should(have.text("Сериалы смотреть онлайн"))
