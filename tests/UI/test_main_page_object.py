@@ -1,8 +1,6 @@
 import allure
 
-from Diploma_tests_IVI_with_UI_and_API_tests.models.pages.ivi_main_page import open_main_page, click_on_notifications_button, \
-    verify_notifications_page, verify_start_page, click_ivi_logo, click_movies_button, verify_movies_page_title, \
-    verify_serials_page_title, click_serials_button, click_cartoons_button, verify_cartoons_page_title
+from ivi_project_tests.pages.ivi_main_page import main_page
 
 
 @allure.epic("Main Page")
@@ -15,9 +13,9 @@ class TestMainPage:
     @allure.tag("smoke", "web")
     @allure.severity("critical")
     def test_notifications_button(self):
-        open_main_page()
-        click_on_notifications_button()
-        verify_notifications_page()
+        main_page.open_main_page()
+        main_page.click_on_notifications_button()
+        main_page.verify_notifications_page()
 
     @allure.story("Навигация через логотип Иви")
     @allure.title("Проверка перехода через нажатие на логотип Иви на стартовую страницу")
@@ -26,9 +24,9 @@ class TestMainPage:
     @allure.tag("smoke", "web")
     @allure.severity("critical")
     def test_tv_button(self):
-        open_main_page()
-        click_ivi_logo()
-        verify_start_page()
+        main_page.open_main_page()
+        main_page.click_ivi_logo()
+        main_page.verify_start_page()
 
     @allure.story("Навигация через кнопку 'Фильмы'")
     @allure.title("Проверка перехода на страницу 'Фильмы'")
@@ -37,9 +35,9 @@ class TestMainPage:
     @allure.tag("smoke", "web")
     @allure.severity("critical")
     def test_movies_button(self):
-        open_main_page()
-        click_movies_button()
-        verify_movies_page_title()
+        main_page.open_main_page()
+        main_page.click_movies_button()
+        main_page.verify_movies_page_title()
 
     @allure.story("Навигация и проверка страниц")
     @allure.title("Проверка перехода на страницу 'Сериалы' и возврата на стартовую страницу")
@@ -48,10 +46,10 @@ class TestMainPage:
     @allure.tag("smoke", "web")
     @allure.severity("critical")
     def test_series_button_and_verify_title(self):
-        open_main_page()
-        verify_start_page()
-        click_serials_button()
-        verify_serials_page_title()
+        main_page.open_main_page()
+        main_page.verify_start_page()
+        main_page.click_serials_button()
+        main_page.verify_serials_page_title()
 
     @allure.story("Навигация и проверка страниц")
     @allure.title("Проверка перехода на страницу 'Мультфильмы'")
@@ -60,7 +58,7 @@ class TestMainPage:
     @allure.tag("smoke", "web")
     @allure.severity("critical")
     def test_cartoons_button_and_verify_title(self):
-        open_main_page()
-        verify_start_page()
-        click_cartoons_button()
-        verify_cartoons_page_title()
+        main_page.open_main_page()
+        main_page.verify_start_page()
+        main_page.click_cartoons_button()
+        main_page.verify_cartoons_page_title()

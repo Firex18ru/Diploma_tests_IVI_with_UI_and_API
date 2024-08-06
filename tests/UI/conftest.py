@@ -6,7 +6,7 @@ from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from Diploma_tests_IVI_with_UI_and_API_tests.utils import attach
+from ivi_project_tests.utils import attach
 
 
 def video_url():
