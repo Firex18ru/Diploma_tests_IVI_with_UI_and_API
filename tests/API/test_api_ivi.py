@@ -8,21 +8,21 @@ from schemas.ivi_api_schemas import *
 @allure.epic("API request")
 class TestIvi:
     @allure.story("Проверка всех возрастных категорий")
-    @allure.title("Тестирование получения всех возрастных категорий.")
+    @allure.title("Тестирование получения всех возрастных категорий")
     @allure.feature("API")
     @allure.label("API request")
     @allure.tag("regress", "API")
     @allure.severity("normal")
     def test_get_all_age_categories(self, api_url):
         response = requests.get(f"{api_url}/agecategories/")
-        with allure.step("Проверка, API возвращает код статуса 200."):
+        with allure.step("Проверка, API возвращает код статуса 200"):
             assert response.status_code == 200
         json_response = response.json()
-        with allure.step("Проверка структуры JSON-ответа."):
+        with allure.step("Проверка структуры JSON-ответа"):
             validate(instance=json_response, schema=all_age_categories_schema)
 
     @allure.story("Проверка возрастных категорий")
-    @allure.title("Тестирование получения возрастных категорий с заданным возрастом.")
+    @allure.title("Тестирование получения возрастных категорий с заданным возрастом")
     @allure.feature("API")
     @allure.label("API request")
     @allure.tag("regress", "API")
@@ -31,14 +31,14 @@ class TestIvi:
         url = f"{api_url}/agecategories/v6/"
         params = {"age": 3}
         response = requests.get(url, params=params)
-        with allure.step("Проверка, API возвращает код статуса 200."):
+        with allure.step("Проверка, API возвращает код статуса 200"):
             assert response.status_code == 200
         json_response = response.json()
-        with allure.step("Проверка структуры JSON-ответа."):
+        with allure.step("Проверка структуры JSON-ответа"):
             validate(instance=json_response, schema=age_categories_schema)
 
     @allure.story("Проверка метаданных жанров")
-    @allure.title("Тест получения списка сквозных жанров с обязательным параметром app_version.")
+    @allure.title("Тест получения списка сквозных жанров с обязательным параметром app_version")
     @allure.feature("API")
     @allure.label("API request")
     @allure.tag("regress", "API")
@@ -48,14 +48,14 @@ class TestIvi:
         url = f"{api_url}/meta_genres/"
         params = {"app_version": app_version}
         response = requests.get(url, params=params)
-        with allure.step("Проверка, API возвращает код статуса 200."):
+        with allure.step("Проверка, API возвращает код статуса 200"):
             assert response.status_code == 200
         data = response.json()
-        with allure.step("Проверка структуры JSON-ответа."):
+        with allure.step("Проверка структуры JSON-ответа"):
             validate(instance=data, schema=meta_genres_schema)
 
     @allure.story("Проверка метаданных жанров")
-    @allure.title("Тест получения списка сквозных жанров с использованием всех параметров.")
+    @allure.title("Тест получения списка сквозных жанров с использованием всех параметров")
     @allure.feature("API")
     @allure.label("API request")
     @allure.tag("regress", "API")
@@ -70,14 +70,14 @@ class TestIvi:
             "category": 10
         }
         response = requests.get(url, params=params)
-        with allure.step("Проверка, API возвращает код статуса 200."):
+        with allure.step("Проверка, API возвращает код статуса 200"):
             assert response.status_code == 200
         data = response.json()
-        with allure.step("Проверка структуры JSON-ответа."):
+        with allure.step("Проверка структуры JSON-ответа"):
             validate(instance=data, schema=meta_genres_schema_v5_all_params)
 
     @allure.story("Проверка каталога")
-    @allure.title("Тест каталога с фильтрацией по жанру и рейтингу.")
+    @allure.title("Тест каталога с фильтрацией по жанру и рейтингу")
     @allure.feature("API")
     @allure.label("API request")
     @allure.tag("regress", "API")
@@ -90,14 +90,14 @@ class TestIvi:
             "ivi_rating_10_gte": 8
         }
         response = requests.get(url, params=params)
-        with allure.step("Проверка, API возвращает код статуса 200."):
+        with allure.step("Проверка, API возвращает код статуса 200"):
             assert response.status_code == 200
         data = response.json()
-        with allure.step("Проверка структуры JSON-ответа."):
+        with allure.step("Проверка структуры JSON-ответа"):
             validate(instance=data, schema=catalogue_schema_catalogue_genre_and_rating)
 
     @allure.story("Проверка каталога")
-    @allure.title("Тест каталога с фильтрацией по формату и доступности 3D.")
+    @allure.title("Тест каталога с фильтрацией по формату и доступности 3D")
     @allure.feature("API")
     @allure.label("API request")
     @allure.tag("regress", "API")
@@ -110,8 +110,8 @@ class TestIvi:
             "3d_available": True
         }
         response = requests.get(url, params=params)
-        with allure.step("Проверка, API возвращает код статуса 200."):
+        with allure.step("Проверка, API возвращает код статуса 200"):
             assert response.status_code == 200
         data = response.json()
-        with allure.step("Проверка структуры JSON-ответа."):
+        with allure.step("Проверка структуры JSON-ответа"):
             validate(instance=data, schema=catalogue_schema_format_and_3d)
