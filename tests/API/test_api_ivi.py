@@ -7,6 +7,7 @@ from schemas.ivi_api_schemas import *
 
 @allure.epic("API request")
 class TestIvi:
+
     @allure.story("Проверка всех возрастных категорий")
     @allure.title("Тестирование получения всех возрастных категорий")
     @allure.feature("API")
