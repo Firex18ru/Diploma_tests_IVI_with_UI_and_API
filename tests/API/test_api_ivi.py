@@ -5,8 +5,14 @@ from jsonschema import validate
 from schemas.ivi_api_schemas import *
 
 
+@allure.epic("API request")
 class TestIvi:
-    @allure.step("Тестирование получения всех возрастных категорий.")
+    @allure.story("Проверка всех возрастных категорий")
+    @allure.title("Тестирование получения всех возрастных категорий.")
+    @allure.feature("API")
+    @allure.label("API request")
+    @allure.tag("regress", "API")
+    @allure.severity("normal")
     def test_get_all_age_categories(self, api_url):
         response = requests.get(f"{api_url}/agecategories/")
         with allure.step("Проверка, API возвращает код статуса 200."):
@@ -15,7 +21,12 @@ class TestIvi:
         with allure.step("Проверка структуры JSON-ответа."):
             validate(instance=json_response, schema=all_age_categories_schema)
 
-    @allure.step("Тестирование получения возрастных категорий с заданным возрастом.")
+    @allure.story("Проверка возрастных категорий")
+    @allure.title("Тестирование получения возрастных категорий с заданным возрастом.")
+    @allure.feature("API")
+    @allure.label("API request")
+    @allure.tag("regress", "API")
+    @allure.severity("normal")
     def test_get_age_categories_with_age_only(self, api_url):
         url = f"{api_url}/agecategories/v6/"
         params = {"age": 3}
@@ -26,7 +37,12 @@ class TestIvi:
         with allure.step("Проверка структуры JSON-ответа."):
             validate(instance=json_response, schema=age_categories_schema)
 
-    @allure.step("Тест получения списка сквозных жанров с обязательным параметром app_version.")
+    @allure.story("Проверка метаданных жанров")
+    @allure.title("Тест получения списка сквозных жанров с обязательным параметром app_version.")
+    @allure.feature("API")
+    @allure.label("API request")
+    @allure.tag("regress", "API")
+    @allure.severity("normal")
     def test_get_meta_genres(self, api_url):
         app_version = 458
         url = f"{api_url}/meta_genres/"
@@ -38,7 +54,12 @@ class TestIvi:
         with allure.step("Проверка структуры JSON-ответа."):
             validate(instance=data, schema=meta_genres_schema)
 
-    @allure.step("Тест получения списка сквозных жанров с использованием всех параметров.")
+    @allure.story("Проверка метаданных жанров")
+    @allure.title("Тест получения списка сквозных жанров с использованием всех параметров.")
+    @allure.feature("API")
+    @allure.label("API request")
+    @allure.tag("regress", "API")
+    @allure.severity("normal")
     def test_get_meta_genres_v5_with_all_params(self, api_url):
         url = f"{api_url}/meta_genres/v5/"
         params = {
@@ -55,7 +76,12 @@ class TestIvi:
         with allure.step("Проверка структуры JSON-ответа."):
             validate(instance=data, schema=meta_genres_schema_v5_all_params)
 
-    @allure.step("Тест каталога с фильтрацией по жанру и рейтингу.")
+    @allure.story("Проверка каталога")
+    @allure.title("Тест каталога с фильтрацией по жанру и рейтингу.")
+    @allure.feature("API")
+    @allure.label("API request")
+    @allure.tag("regress", "API")
+    @allure.severity("normal")
     def test_get_catalogue_with_genre_and_rating(self, api_url):
         url = f"{api_url}/catalogue/v7/"
         params = {
@@ -70,7 +96,12 @@ class TestIvi:
         with allure.step("Проверка структуры JSON-ответа."):
             validate(instance=data, schema=catalogue_schema_catalogue_genre_and_rating)
 
-    @allure.step("Тест каталога с фильтрацией по формату и доступности 3D.")
+    @allure.story("Проверка каталога")
+    @allure.title("Тест каталога с фильтрацией по формату и доступности 3D.")
+    @allure.feature("API")
+    @allure.label("API request")
+    @allure.tag("regress", "API")
+    @allure.severity("normal")
     def test_get_catalogue_with_format_and_3d(self, api_url):
         url = f"{api_url}/catalogue/v7/"
         params = {

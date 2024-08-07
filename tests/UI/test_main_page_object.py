@@ -7,7 +7,7 @@ from ivi_project_tests.pages.ivi_main_page import main_page
 class TestMainPage:
 
     @allure.story("Проверка кнопки уведомлений")
-    @allure.title("Проверка отображения и клика на кнопку уведомлений")
+    @allure.title("Проверка отображения и клик на кнопку уведомлений")
     @allure.feature("UI")
     @allure.label("UI Navigation")
     @allure.tag("smoke", "web")
