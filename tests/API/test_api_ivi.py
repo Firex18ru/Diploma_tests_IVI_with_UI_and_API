@@ -12,6 +12,7 @@ class TestIvi:
     @allure.title("Тестирование получения всех возрастных категорий")
     @allure.feature("API")
     @allure.label("API request")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("regress", "API")
     @allure.severity("normal")
     def test_get_all_age_categories(self, api_url):
@@ -26,6 +27,7 @@ class TestIvi:
     @allure.title("Тестирование получения возрастных категорий с заданным возрастом")
     @allure.feature("API")
     @allure.label("API request")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("regress", "API")
     @allure.severity("normal")
     def test_get_age_categories_with_age_only(self, api_url):
@@ -42,6 +44,7 @@ class TestIvi:
     @allure.title("Тест получения списка сквозных жанров с обязательным параметром app_version")
     @allure.feature("API")
     @allure.label("API request")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("regress", "API")
     @allure.severity("normal")
     def test_get_meta_genres(self, api_url):
@@ -59,6 +62,7 @@ class TestIvi:
     @allure.title("Тест получения списка сквозных жанров с использованием всех параметров")
     @allure.feature("API")
     @allure.label("API request")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("regress", "API")
     @allure.severity("normal")
     def test_get_meta_genres_v5_with_all_params(self, api_url):
@@ -81,6 +85,7 @@ class TestIvi:
     @allure.title("Тест каталога с фильтрацией по жанру и рейтингу")
     @allure.feature("API")
     @allure.label("API request")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("regress", "API")
     @allure.severity("normal")
     def test_get_catalogue_with_genre_and_rating(self, api_url):
@@ -101,6 +106,7 @@ class TestIvi:
     @allure.title("Тест каталога с фильтрацией по формату и доступности 3D")
     @allure.feature("API")
     @allure.label("API request")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("regress", "API")
     @allure.severity("normal")
     def test_get_catalogue_with_format_and_3d(self, api_url):

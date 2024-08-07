@@ -8,8 +8,9 @@ class TestSearchPage:
 
     @allure.story("Поиск конкретного фильма")
     @allure.title("Поиск видео 'Дом Дракона' показывает отсутствие результатов")
-    @allure.feature("Поиск фильма")
-    @allure.label("Видеопоиск")
+    @allure.feature("UI")
+    @allure.label("UI Navigation")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("smoke", "web")
     @allure.severity("normal")
     def test_search_specific_movie(self):
@@ -20,8 +21,9 @@ class TestSearchPage:
 
     @allure.story("Поиск конкретного фильма")
     @allure.title("Поиск видео 'Дом Дракона' показывает альтернативные варианты")
-    @allure.feature("Поиск фильма")
-    @allure.label("Видеопоиск")
+    @allure.feature("UI")
+    @allure.label("UI Navigation")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("smoke", "web")
     @allure.severity("normal")
     def test_search_alternative_movie(self):

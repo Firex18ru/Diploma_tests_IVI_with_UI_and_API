@@ -10,6 +10,7 @@ class TestMainPage:
     @allure.title("Проверка отображения и клик на кнопку уведомлений")
     @allure.feature("UI")
     @allure.label("UI Navigation")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("smoke", "web")
     @allure.severity("critical")
     def test_notifications_button(self):
@@ -21,6 +22,7 @@ class TestMainPage:
     @allure.title("Проверка перехода через нажатие на логотип Иви на стартовую страницу")
     @allure.feature("UI")
     @allure.label("UI Navigation")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("smoke", "web")
     @allure.severity("critical")
     def test_tv_button(self):
@@ -32,6 +34,7 @@ class TestMainPage:
     @allure.title("Проверка перехода на страницу 'Фильмы'")
     @allure.feature("UI")
     @allure.label("UI Navigation")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("smoke", "web")
     @allure.severity("critical")
     def test_movies_button(self):
@@ -43,6 +46,7 @@ class TestMainPage:
     @allure.title("Проверка перехода на страницу 'Сериалы' и возврата на стартовую страницу")
     @allure.feature("UI")
     @allure.label("UI Navigation")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("smoke", "web")
     @allure.severity("critical")
     def test_series_button_and_verify_title(self):
@@ -55,6 +59,7 @@ class TestMainPage:
     @allure.title("Проверка перехода на страницу 'Мультфильмы'")
     @allure.feature("UI")
     @allure.label("UI Navigation")
+    @allure.label("owner", "Yakimenko")
     @allure.tag("smoke", "web")
     @allure.severity("critical")
     def test_cartoons_button_and_verify_title(self):
