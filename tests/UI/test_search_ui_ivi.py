@@ -11,7 +11,7 @@ class TestSearchPage:
     @allure.feature("UI")
     @allure.label("UI Navigation")
     @allure.label("owner", "Yakimenko")
-    @allure.tag("smoke", "web")
+    @allure.tag("smoke", "web", "negative")
     @allure.severity("normal")
     def test_search_specific_movie(self):
         main_page.open_main_page()
@@ -24,7 +24,7 @@ class TestSearchPage:
     @allure.feature("UI")
     @allure.label("UI Navigation")
     @allure.label("owner", "Yakimenko")
-    @allure.tag("smoke", "web")
+    @allure.tag("smoke", "web", "positive")
     @allure.severity("normal")
     def test_search_alternative_movie(self):
         main_page.open_main_page()
