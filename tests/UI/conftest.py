@@ -9,10 +9,6 @@ from selenium.webdriver.chrome.options import Options
 from ivi_project_tests.utils import attach
 
 
-def video_url():
-    return None
-
-
 @pytest.fixture(scope="session", autouse=True)
 def load_env():
     load_dotenv()
