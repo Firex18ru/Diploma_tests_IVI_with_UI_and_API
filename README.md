@@ -105,5 +105,5 @@
 
 ### Видео прохождения web/UI автотеста
 
-![autotest_gif](resources/pictures/test_video.mp4)
+![autotest_gif](resources/pictures/test_video.gif)
 
