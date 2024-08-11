@@ -1,4 +1,4 @@
-# Дипломный проект по автоматизации тестирования сайта "Онлайн кинотеатр Ivi"
+# Дипломный проект по автоматизации тестирования сайта "Онлайн кинотеатр IvI"
 
 > <a target="_blank" href="https://www.ivi.ru/">ivi.ru</a>
 
@@ -38,7 +38,7 @@
 
 ### Используемый стэк
 
-<img title="Python" src="/resources/icons/python-original.svg" height="40" width="40"/> <img title="Pytest" src="resources/icons/pytest-original.svg" height="40" width="40"/> <img title="Jira" src="resources/icons/jira-original.svg" height="40" width="40"/> <img title="Allure Report" src="resources/icons/Allure_Report.png" height="40" width="40"/> <img title="Allure TestOps" src="/resources/icons/AllureTestOps.png" height="40" width="40"/> <img title="GitHub" src="resources/icons/github-original.svg" height="40" width="40"/> <img title="Selenoid" src="resources/icons/selenoid.png" height="40" width="40"/> <img title="Selene" src="resources/icons/selene.png" height="40" width="40"/> <img title="Pycharm" src="resources/icons/pycharm.png" height="40" width="40"/> <img title="Telegram" src="resources/icons/tg.png" height="40" width="40"/> <img title="Jenkins" src="resources/icons/jenkins.png" height="40" width="40"/>
+<img title="Python" src="/resources/icons/python-original.svg" height="40" width="40"/> 
 
 ----
 
