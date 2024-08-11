@@ -99,7 +99,7 @@
 
 ### Оповещения в Telegram
 
-![telegram_allert](resources/pictures/telegram_tests.jpg)
+![telegram_allert](resources/pictures/tellegram_tests.jpg)
 
 ----
 
