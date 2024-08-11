@@ -43,7 +43,7 @@ class TestMainPage:
         main_page.verify_movies_page_title()
 
     @allure.story("Навигация и проверка страниц")
-    @allure.title("Проверка перехода на страницу 'Сериалы' и возврата на стартовую страницу")
+    @allure.title("Проверка перехода на страницу 'Сериалы'")
     @allure.feature("UI")
     @allure.label("UI Navigation")
     @allure.label("owner", "Yakimenko")
