@@ -38,7 +38,7 @@
 
 ### Используемый стэк
 
-<img title="Python" src="resources/icons/python-original.svg" height="40" width="40"/> 
+<img title="Python" src="resources/icon/python-original.svg" height="40" width="40"/> 
 
 ----
 
