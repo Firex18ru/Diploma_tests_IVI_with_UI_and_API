@@ -39,6 +39,7 @@ class TestMainPage:
     @allure.severity("critical")
     def test_movies_button(self):
         main_page.open_main_page()
+        main_page.verify_start_page()
         main_page.click_movies_button()
         main_page.verify_movies_page_title()
 
