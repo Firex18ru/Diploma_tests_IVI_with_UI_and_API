@@ -63,7 +63,7 @@ meta_genres_schema = {
     }
 }
 
-meta_genres_schema_v5_all_params = {
+meta_genres_schema_with_params = {
     "type": "object",
     "properties": {
         "result": {
@@ -91,7 +91,11 @@ meta_genres_schema_v5_all_params = {
                             "required": ["content_format", "dominant_color", "height", "url", "width"],
                             "additionalProperties": False
                         }
-                    }
+                    },
+                    "id": {"type": "integer"},
+                    "title": {"type": "string"},
+                    "hru": {"type": "string"},
+                    "priority": {"type": "integer"}
                 },
                 "required": ["id", "title", "hru", "priority", "genre_list", "icons"],
                 "additionalProperties": False
@@ -102,7 +106,7 @@ meta_genres_schema_v5_all_params = {
     "additionalProperties": False
 }
 
-catalogue_schema_catalogue_genre_and_rating = {
+catalogue_schema_catalogue_with_params = {
     "type": "object",
     "properties": {
         "result": {
@@ -114,10 +118,32 @@ catalogue_schema_catalogue_genre_and_rating = {
                     "title": {"type": "string"},
                     "description": {"type": "string"},
                     "genres": {"type": "array"},
-                    "country": {"type": "string"},
+                    "country": {"type": ["string", "number"]},
                     "year": {"type": "integer"},
-                    "rating": {"type": "number"}
-
+                    "rating": {
+                        "oneOf": [
+                            {"type": "number"},
+                            {"type": "null"},
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "ready": {
+                                        "type": "object",
+                                        "properties": {
+                                            "votes": {"type": "integer"},
+                                            "main": {"type": "number"},
+                                            "director": {"type": "number"},
+                                            "pretty": {"type": "number"},
+                                            "actors": {"type": "number"},
+                                            "story": {"type": "number"},
+                                        },
+                                        "additionalProperties": False,
+                                    }
+                                },
+                                "additionalProperties": False,
+                            }
+                        ]
+                    }
                 },
                 "required": ["id", "title"],
                 "additionalProperties": True
@@ -130,7 +156,7 @@ catalogue_schema_catalogue_genre_and_rating = {
     "additionalProperties": False
 }
 
-catalogue_schema_format_and_3d = {
+catalogue_schema_format_movie = {
     "type": "object",
     "properties": {
         "result": {
@@ -142,12 +168,32 @@ catalogue_schema_format_and_3d = {
                     "title": {"type": "string"},
                     "description": {"type": "string"},
                     "genres": {"type": "array"},
-                    "country": {"type": "string"},
+                    "country": {"type": ["string", "number"]},
                     "year": {"type": "integer"},
-                    "rating": {"type": "number"},
-                    "hd_available": {"type": "boolean"},
-                    "3d_available": {"type": "boolean"}
-
+                    "rating": {
+                        "oneOf": [
+                            {"type": "number"},
+                            {"type": "null"},
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "ready": {
+                                        "type": "object",
+                                        "properties": {
+                                            "votes": {"type": "integer"},
+                                            "main": {"type": "number"},
+                                            "director": {"type": "number"},
+                                            "pretty": {"type": "number"},
+                                            "actors": {"type": "number"},
+                                            "story": {"type": "number"},
+                                        },
+                                        "additionalProperties": False,
+                                    }
+                                },
+                                "additionalProperties": False,
+                            }
+                        ]
+                    }
                 },
                 "required": ["id", "title"],
                 "additionalProperties": True
