@@ -46,8 +46,6 @@
 
 > <a target="_blank" href="https://jenkins.autotests.cloud/job/Diploma_tests_IVI_with_UI_and_API/">Ссылка</a>
 
-* Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/Diploma_tests_IVI_with_UI_and_API/">проект</a>
-
 ![jenkins project main page](/resources/pictures/jenkins_joba.jpg)
 
 ----
