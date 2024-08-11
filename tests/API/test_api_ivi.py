@@ -77,7 +77,7 @@ class TestIvi:
         response_attaching(response)
 
     @allure.story("Проверка каталога")
-    @allure.title("Тест каталога с фильтрацией по жанру и рейтингу")
+    @allure.title("Тест каталога с использованием параметров")
     @allure.feature("API")
     @allure.label("API request")
     @allure.label("owner", "Yakimenko")
@@ -99,7 +99,7 @@ class TestIvi:
         response_attaching(response)
 
     @allure.story("Проверка каталога")
-    @allure.title("Тест каталога с фильтрацией по формату и доступности 3D")
+    @allure.title("Тест каталога с фильтрацией по доступному формату")
     @allure.feature("API")
     @allure.label("API request")
     @allure.label("owner", "Yakimenko")
