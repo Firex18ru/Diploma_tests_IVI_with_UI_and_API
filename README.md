@@ -39,6 +39,16 @@
 ### Используемый стэк
 
 <img title="Python" src="resources/icon/python-original.svg" height="40" width="40"/> 
+<img title="Pytest" src="resources/icon/pytest-original.svg" height="40" width="40"/> 
+<img title="Jira" src="resources/icon/jira-original.svg" height="40" width="40"/> 
+<img title="Allure Report" src="resources/icon/Allure_Report.png" height="40" width="40"/> 
+<img title="Allure TestOps" src="/resources/icon/AllureTestOps.png" height="40" width="40"/> 
+<img title="GitHub" src="resources/icon/github-original.svg" height="40" width="40"/> 
+<img title="Selenoid" src="resources/icon/selenoid.png" height="40" width="40"/> 
+<img title="Selene" src="resources/icon/selene.png" height="40" width="40"/> 
+<img title="Pycharm" src="resources/icon/pycharm.png" height="40" width="40"/> 
+<img title="Telegram" src="resources/icon/tg.png" height="40" width="40"/> 
+<img title="Jenkins" src="resources/icon/jenkins.png" height="40" width="40"/>
 
 ----
 
