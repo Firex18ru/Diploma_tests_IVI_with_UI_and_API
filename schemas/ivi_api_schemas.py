@@ -1,21 +1,14 @@
 age_categories_schema = {
-    "type": "object",
-    "properties": {
-        "result": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "id": {"type": "integer"},
-                    "title": {"type": "string"}
-                },
-                "required": ["id", "title"],
-                "additionalProperties": False
-            }
-        }
-    },
-    "required": ["result"],
-    "additionalProperties": False
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {"type": "integer"},
+            "title": {"type": "string"}
+        },
+        "required": ["id", "title"],
+        "additionalProperties": False
+    }
 }
 
 all_age_categories_schema = {

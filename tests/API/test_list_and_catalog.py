@@ -31,13 +31,13 @@ class TestIvi:
     @allure.severity("normal")
     def test_get_age_categories_with_age_only(self, api_url, api_request_and_validate):
         response = api_request_and_validate(
-            url=f"{api_url}/agecategories/v6/",
-            params={"age": 3},
+            url=f"{api_url}/agecategories/",
+            params={"age": "3-4"},
             schema=age_categories_schema
         )
         expected_title = "3-4"
-        actual_titles = [category["title"] for category in response.json()]
-        assert expected_title in actual_titles
+        actual_response = response.json()
+        assert expected_title in [category["title"] for category in actual_response]
 
     @allure.story("Проверка метаданных жанров")
     @allure.title("Тест получения списка сквозных жанров с обязательным параметром app_version")
