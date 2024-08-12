@@ -2,7 +2,7 @@ import allure
 import pytest
 import requests
 from jsonschema import validate
-
+from ivi_project_tests.utils.helper import response_logging, response_attaching
 
 @pytest.fixture()
 def api_url():
@@ -18,6 +18,8 @@ def api_request_and_validate():
         if schema:
             with allure.step(f"Проверка структуры JSON-ответа для {url}"):
                 validate(instance=response.json(), schema=schema)
+        response_logging(response)
+        response_attaching(response)
         return response
 
     return _api_request_and_validate

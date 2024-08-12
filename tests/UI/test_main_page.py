@@ -50,7 +50,7 @@ class TestMainPage:
     @allure.label("owner", "Yakimenko")
     @allure.tag("smoke", "web")
     @allure.severity("critical")
-    def test_series_button_and_verify_title(self):
+    def test_serials_button_and_verify_title(self):
         main_page.open_main_page()
         main_page.verify_start_page()
         main_page.click_serials_button()

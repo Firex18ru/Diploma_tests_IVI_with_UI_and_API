@@ -1,7 +1,6 @@
 import allure
 
 from schemas.ivi_api_schemas import *
-from tests.API.helper import response_logging, response_attaching
 
 
 @allure.epic("API request")
@@ -19,8 +18,9 @@ class TestIvi:
             url=f"{api_url}/agecategories/",
             schema=all_age_categories_schema
         )
-        response_logging(response)
-        response_attaching(response)
+        expected_titles = ["0-2", "3-4", "5-6", "7-12"]
+        actual_titles = [category["title"] for category in response.json()]
+        assert set(expected_titles).issubset(set(actual_titles))
 
     @allure.story("Проверка возрастных категорий")
     @allure.title("Тестирование получения возрастных категорий с заданным возрастом")
@@ -35,8 +35,9 @@ class TestIvi:
             params={"age": 3},
             schema=age_categories_schema
         )
-        response_logging(response)
-        response_attaching(response)
+        expected_title = "3-4"
+        actual_titles = [category["title"] for category in response.json()]
+        assert expected_title in actual_titles
 
     @allure.story("Проверка метаданных жанров")
     @allure.title("Тест получения списка сквозных жанров с обязательным параметром app_version")
@@ -51,8 +52,11 @@ class TestIvi:
             params={"app_version": 458},
             schema=meta_genres_schema
         )
-        response_logging(response)
-        response_attaching(response)
+        result = response.json()
+        for meta_genre in result:
+            assert "id" in meta_genre
+            assert "title" in meta_genre
+            assert "hru" in meta_genre
 
     @allure.story("Проверка метаданных жанров")
     @allure.title("Тест получения списка сквозных жанров с использованием параметров")
@@ -73,8 +77,12 @@ class TestIvi:
             },
             schema=meta_genres_schema_with_params
         )
-        response_logging(response)
-        response_attaching(response)
+        result = response.json()["result"]
+        for meta_genre in result:
+            assert "id" in meta_genre
+            assert "title" in meta_genre
+            assert "hru" in meta_genre
+            assert "priority" in meta_genre
 
     @allure.story("Проверка каталога")
     @allure.title("Тест каталога с использованием параметров")
@@ -95,8 +103,12 @@ class TestIvi:
             },
             schema=catalogue_schema_catalogue_with_params
         )
-        response_logging(response)
-        response_attaching(response)
+        result = response.json()["result"]
+        for catalogue in result:
+            assert "id" in catalogue
+            assert "title" in catalogue
+            assert "hru" in catalogue
+            assert "years" in catalogue
 
     @allure.story("Проверка каталога")
     @allure.title("Тест каталога с фильтрацией по доступному формату")
@@ -115,5 +127,11 @@ class TestIvi:
             },
             schema=catalogue_schema_format_movie
         )
-        response_logging(response)
-        response_attaching(response)
+        result = response.json()["result"]
+        for catalogue in result:
+            assert "id" in catalogue
+            assert "title" in catalogue
+            assert "hd_available_all" in catalogue
+            assert "fullhd_available_all" in catalogue
+            assert len([catalogue for catalogue in result if
+                        catalogue["hd_available_all"] and catalogue["fullhd_available_all"]]) == len(result)
