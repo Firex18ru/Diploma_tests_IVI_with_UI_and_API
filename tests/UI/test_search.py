@@ -1,6 +1,6 @@
 import allure
 
-from ivi_project_tests.pages.ivi_search_page import search_page
+from ivi_project_tests.pages.search_page import search_page
 
 
 @allure.epic("Search page")

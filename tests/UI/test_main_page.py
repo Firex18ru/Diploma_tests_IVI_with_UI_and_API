@@ -1,6 +1,6 @@
 import allure
 
-from ivi_project_tests.pages.ivi_main_page import main_page
+from ivi_project_tests.pages.main_page import main_page
 
 
 @allure.epic("Main Page")
